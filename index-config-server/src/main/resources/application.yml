@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: index-config-server
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/HeatingBag/trendConfig/
+          username: 2606224360@qq.com
+          password: qian152050
+          searchPaths: respo
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

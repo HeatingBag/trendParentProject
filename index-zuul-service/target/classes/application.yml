@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: index-zuul-service
+    zipkin:
+      base-url: http://localhost:9411
+
+    eureka:
+      client:
+        serviceUrl:
+          defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  routes:
+    api-b:
+      path: /api-backtest/**
+      serviceId: TREND-TRADING-BACKTEST-SERVICE
+    api-a:
+      path: /api-codes/**
+      serviceId: INDEX-CODES-SERVICE
+    api-c:
+      path: /api-view/**
+      serviceId: TREND-TRADING-BACKTEST-VIEW
+
+
+
